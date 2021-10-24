@@ -1,0 +1,13 @@
+# docker-compo1.yml
+version: '3'
+services:
+  database:
+    image: "postgres:latest" # use latest official postgres version
+    environment:
+        POSTGRES_USER: test
+        POSTGRES_PASSWORD: 'test123'
+        POSTGRES_DB: testDb
+    volumes:
+      - .database.bt_api:/var/lib/postgresql/data/ # persist data even if container shuts downvolumes:
+    ports:
+        - '5432:5432'
